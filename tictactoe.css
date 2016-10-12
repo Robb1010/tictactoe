@@ -109,15 +109,18 @@ p {
 font-size: 12vh;
 }
 
+.main {
+  margin-top:10vh;
+}
 .result {
-  margin-top: 1vh;
+  margin-top: 5vh;
 }
 .result p{
   margin-left: 2%;
 }
 .lines {
   margin-left: 8%;
-  margin-top: 2vh;
+  margin-top: 7vh;
   width: 98%;
 }
 }
