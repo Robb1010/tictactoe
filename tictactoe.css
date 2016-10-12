@@ -111,15 +111,16 @@ font-size: 12vh;
 
 .main {
   margin-top:10vh;
+  margin-lef: 10%;
 }
 .result {
   margin-top: 2vh;
 }
 .result p{
-  margin-left: 15;
+  margin-left: 1%;
 }
 .lines {
-  margin-left: 15%;
+  margin-left: 1%;
   margin-top: 3vh;
   width: 98%;
 }
