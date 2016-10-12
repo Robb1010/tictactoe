@@ -113,14 +113,14 @@ font-size: 12vh;
   margin-top:10vh;
 }
 .result {
-  margin-top: 5vh;
+  margin-top: 2vh;
 }
 .result p{
-  margin-left: 2%;
+  margin-left: 15;
 }
 .lines {
-  margin-left: 8%;
-  margin-top: 7vh;
+  margin-left: 15%;
+  margin-top: 3vh;
   width: 98%;
 }
 }
