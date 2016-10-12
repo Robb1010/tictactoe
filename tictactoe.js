@@ -8,6 +8,7 @@ var c1 = 0;
 var c2 = 0;
 var c3 = 0;
 var status = "active";
+var turn = "ex";
 
 var grid = {
   1: [],
@@ -18,16 +19,6 @@ var grid = {
   6: [],
   7: [],
   8: []
-}
-
-function value(input) {
-  if (input === "D") {
-    return 0;
-  } else if (input === "O") {
-    return 3;
-  } else if (input === "X") {
-    return 4;
-  }
 }
 
 var ids = {
@@ -111,7 +102,7 @@ function decision() {
 
 function strikeO() {
   for (k=0;k<3;k++) {
-    if (grid[i][k] === 0) {
+    if (grid[i][k] === 0 && status === "active") {
       $("#" + ids[i][k] + " p").removeClass("none");
       $("#" + ids[i][k] + " p").addClass("ou");
       $("#" + ids[i][k] + " p").text("O");
@@ -146,7 +137,7 @@ function youWin() {
       flashIt();
       $(".result p").removeClass("none");
       $(".result p").addClass("win");
-      $(".result p").text("You won!      ");
+      $(".result p").text("You won!");
       status = "inactive";
       return;
     }
@@ -160,6 +151,7 @@ function draw() {
     $(".result p").addClass("draw");
     $(".result p").text("Draw!         ");
     status = "inactive";
+    clearIt();
     return;
   }
 }
@@ -168,4 +160,10 @@ function flashIt() {
   for (k=0;k<3;k++) {
     $("#" + ids[i][k] + " p").hide().fadeIn("slow");
   }
+}
+
+function clearIt() {
+  $("#col-xs-4 p").removeClass("ou");
+  $("#col-xs-4 p").removeClass("ex");
+  $("#col-xs-4 p").addClass("none");
 }
