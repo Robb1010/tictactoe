@@ -1,0 +1,123 @@
+body {
+    background-image: url("bckgr.png");
+    background-repeat: repeat;
+}
+
+p {
+  font-family: "Subway", sans-serif;
+  font-size: 15vh;
+  color: white;
+  text-align: center;
+  text-shadow:  0px 0px 15px #fff;
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+}
+
+.ex {
+  color: lightblue;
+  text-shadow:  0px 0px 15px lightblue;
+}
+
+.ou {
+  color: #ffa44f;
+  text-shadow:  0px 0px 15px #ffa44f;
+}
+
+.result {
+  margin: 1%;
+  margin-top: 5vh;
+}
+.result p{
+  margin-left: 32vw;
+  font-size: 9vh;
+  text-align: left;
+}
+
+.none {
+  visibility: hidden;
+}
+
+.col-xs-4 {
+  border-style: dashed;
+  border-width: 4px;
+  border-color: white;
+  max-height: 18vh;
+  max-width: 18vh;
+}
+
+.main {
+  margin: 1%;
+}
+
+.lines {
+  position: relative;
+  margin-left: 32vw;
+  margin-top: 2vh;
+  width: 50%;
+}
+
+@font-face {
+    font-family: "Subway";
+    src: url(subway-ticker.ttf) format("truetype");
+}
+
+#a1 {
+  border-top: none;
+  border-left: none;
+
+}
+
+#a2 {
+  border-top: none;
+}
+
+#a3 {
+  border-top: none;
+  border-right: none;
+}
+
+#b1 {
+  border-left: none;
+}
+
+#b3 {
+  border-right: none;
+}
+
+#c1 {
+  border-bottom: none;
+  border-left: none;
+}
+
+#c2 {
+  border-bottom: none;
+}
+
+#c3 {
+  border-bottom: none;
+  border-right: none;
+}
+
+@media screen and (max-width: 1441px) {
+.col-xs-4 {
+  height: 15vh;
+  width: 15vh;
+}
+
+p {
+font-size: 12vh;
+}
+
+.result {
+  margin-top: 1vh;
+}
+.result p{
+  margin-left: 2%;
+}
+.lines {
+  margin-left: 2%;
+  margin-top: 2vh;
+  width: 95%;
+}
+}
