@@ -83,7 +83,9 @@ $(".col-xs-4").click(function () {
   gridFill();
   youWin();
   draw();
-  decision();
+  if (status === "active") {
+    decision();
+  }
 }
 });
 
