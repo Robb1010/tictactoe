@@ -149,11 +149,7 @@ font-size: 12vh;
   margin-top: 3vh;
   width: 98%;
 }
-
-#pick_ex {
-  text-align: right;
-}
-#pick_ou {
-  text-align: right;
+#or {
+  margin-left: -2vw;
 }
 }
