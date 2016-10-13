@@ -113,7 +113,7 @@ p {
   border-right: none;
 }
 
-@media screen and (max-width: 1441px) {
+@media screen and (max-width: 800px) {
 
 .choice {
   position: absolute;
