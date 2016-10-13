@@ -24,6 +24,13 @@ var grid = {
   8: []
 }
 
+var cornerIds = {
+  1: "a3",
+  2: "a1",
+  3: "c1",
+  4: "c3"
+}
+
 var ids = {
   1: ["a1", "a2", "a3"],
   2: ["b1", "b2", "b3"],
@@ -82,7 +89,9 @@ $(".col-xs-4").click(function () {
 
 
 function decision() {
+  status = "inactive";
   setTimeout(function(){
+    status = "active";
   if (b2 === 0) {
     $("#b2 p").addClass("ou");
     $("#b2 p").removeClass("none");
@@ -100,7 +109,15 @@ function decision() {
   }
   for (i=1;i<9;i++) {
     check = grid[i].reduce(function(a,b) {return a+b;});
-    if (check === 6) {
+    var sqSum = [a1, a2, a3, b1, b2, b3, c1, c2, c3].reduce(function(a,b) {return a+b;});
+    if (check === 11 && sqSum === 11 && a3 === 0) {
+          $("#a3 p").removeClass("none");
+          $("#a3 p").addClass("ou");
+          $("#a3 p").text(npc);
+          a3 = 3;
+          gridFill();
+          return;
+    }else if (check === 6) {
       strikeO();
       return;
     } else if (check === 8) {
