@@ -9,6 +9,9 @@ var c2 = 0;
 var c3 = 0;
 var status = "active";
 var turn = "ex";
+var npc = "";
+var plr = "";
+
 
 var grid = {
   1: [],
@@ -31,6 +34,19 @@ var ids = {
   7: ["a1", "b2", "c3"],
   8: ["a3", "b2", "c1"]
 }
+
+$("#pick_ex").click(function() {
+  plr = "X";
+  npc = "O";
+  $(".main").removeClass("none");
+  $(".choice").addClass("none");
+});
+$("#pick_ou").click(function() {
+  plr = "O";
+  npc = "X";
+  $(".main").removeClass("none");
+  $(".choice").addClass("none");
+});
 
 function gridFill() {
   grid = {
@@ -55,7 +71,7 @@ $(".col-xs-4").click(function () {
   if (window[this.id] === 0 && status === "active") {
   $("#" + this.id + " p").removeClass("none");
   $("#" + this.id + " p").addClass("ex");
-  $("#" + this.id + " p").text("X");
+  $("#" + this.id + " p").text(plr);
   window[this.id] = 4;
   gridFill();
   youWin();
@@ -69,14 +85,14 @@ function decision() {
   if (b2 === 0) {
     $("#b2 p").addClass("ou");
     $("#b2 p").removeClass("none");
-    $("#b2 p").text("0");
+    $("#b2 p").text(npc);
     b2 = 3;
     gridFill();
     return;
   } else if (b2 !== 0 && a1+a2+a3+b1+b3+c1+c2+c3 === 0) {
     $("#a1 p").addClass("ou");
     $("#a1 p").removeClass("none");
-    $("#a1 p").text("0");
+    $("#a1 p").text(npc);
     a1 = 3;
     gridFill();
     return;
@@ -105,7 +121,7 @@ function strikeO() {
     if (grid[i][k] === 0 && status === "active") {
       $("#" + ids[i][k] + " p").removeClass("none");
       $("#" + ids[i][k] + " p").addClass("ou");
-      $("#" + ids[i][k] + " p").text("O");
+      $("#" + ids[i][k] + " p").text(npc);
       window[ids[i][k]] = 3;
       youLost();
       draw();
@@ -190,7 +206,7 @@ function clearIt() {
   if (turn === "ou") {
     $("#b2 p").addClass("ou");
     $("#b2 p").removeClass("none");
-    $("#b2 p").text("0");
+    $("#b2 p").text(npc);
     b2 = 3;
     gridFill();
     return;
