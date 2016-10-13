@@ -82,6 +82,7 @@ $(".col-xs-4").click(function () {
 
 
 function decision() {
+  setTimeout(function(){
   if (b2 === 0) {
     $("#b2 p").addClass("ou");
     $("#b2 p").removeClass("none");
@@ -114,6 +115,7 @@ function decision() {
       return;
     } else strikeO();
   }
+}, 750);
 }
 
 function strikeO() {
