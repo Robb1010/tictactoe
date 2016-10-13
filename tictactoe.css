@@ -24,6 +24,11 @@ p {
   text-shadow:  0px 0px 15px #ffa44f;
 }
 
+#pick_ou.ou {
+  color: lightblue;
+  text-shadow:  0px 0px 15px lightblue;
+}
+
 .result {
   margin: 1%;
   margin-top: 5vh;
