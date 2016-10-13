@@ -124,6 +124,8 @@ function youLost() {
       $(".result p").addClass("lost");
       $(".result p").text("You lost!     ");
       status = "inactive";
+      turns();
+      clearIt();
       return;
     }
   }
@@ -139,6 +141,8 @@ function youWin() {
       $(".result p").addClass("win");
       $(".result p").text("You won!");
       status = "inactive";
+      turns();
+      clearIt();
       return;
     }
   }
@@ -151,6 +155,7 @@ function draw() {
     $(".result p").addClass("draw");
     $(".result p").text("Draw!         ");
     status = "inactive";
+    turns();
     clearIt();
     return;
   }
@@ -163,7 +168,41 @@ function flashIt() {
 }
 
 function clearIt() {
-  $("#col-xs-4 p").removeClass("ou");
-  $("#col-xs-4 p").removeClass("ex");
-  $("#col-xs-4 p").addClass("none");
-}
+  setTimeout(function() {
+  $(".col-xs-4 p").removeClass("ou");
+  $(".col-xs-4 p").removeClass("ex");
+  $(".col-xs-4 p").addClass("none");
+  $(".result p").addClass("none");
+  $(".result p").removeClass("draw");
+  $(".result p").removeClass("win");
+  $(".result p").removeClass("lost");
+  status = "active";
+  a1 = 0;
+  a2 = 0;
+  a3 = 0;
+  b1 = 0;
+  b2 = 0;
+  b3 = 0;
+  c1 = 0;
+  c2 = 0;
+  c3 = 0;
+  gridFill();
+  if (turn === "ou") {
+    $("#b2 p").addClass("ou");
+    $("#b2 p").removeClass("none");
+    $("#b2 p").text("0");
+    b2 = 3;
+    gridFill();
+    return;
+  }
+}, 3000);}
+
+function turns() {
+      if (turn === "ex") {
+        turn = "ou";
+        return;
+      } if (turn === "ou") {
+        turn = "ex";
+        return;
+      }
+    }
