@@ -112,9 +112,13 @@ p {
 
 .choice {
   position: absolute;
-  width: 96%;
-  margin-top: -55%;
-  margin-left: 2%;
+  width: 99%;
+  margin-top: -65%;
+  margin-left: 1%;
+}
+
+.choice p{
+  font-size: 11vh;
 }
 
 .col-xs-4 {
