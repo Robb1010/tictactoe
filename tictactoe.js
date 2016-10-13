@@ -111,12 +111,19 @@ function decision() {
     check = grid[i].reduce(function(a,b) {return a+b;});
     var sqSum = [a1, a2, a3, b1, b2, b3, c1, c2, c3].reduce(function(a,b) {return a+b;});
     if (check === 11 && sqSum === 11 && a3 === 0) {
-          $("#a3 p").removeClass("none");
-          $("#a3 p").addClass("ou");
-          $("#a3 p").text(npc);
-          a3 = 3;
-          gridFill();
-          return;
+      $("#a3 p").removeClass("none");
+      $("#a3 p").addClass("ou");
+      $("#a3 p").text(npc);
+      a3 = 3;
+      gridFill();
+      return;
+    }else if (check === 11 && sqSum === 11 && a2 === 0) {
+      $("#a2 p").removeClass("none");
+      $("#a2 p").addClass("ou");
+      $("#a2 p").text(npc);
+      a2 = 3;
+      gridFill();
+      return;
     }else if (check === 6) {
       strikeO();
       return;
