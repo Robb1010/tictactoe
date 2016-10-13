@@ -114,7 +114,7 @@ p {
   position: absolute;
   width: 99%;
   margin-top: -65%;
-  margin-left: 8.5vh;
+  margin-right: 1%;
 }
 
 .choice p{
@@ -122,8 +122,8 @@ p {
 }
 
 .col-xs-3 {
-  height: 15vh;
-  width: 15vh;
+  height: 13vh;
+  width: 13vh;
 }
 
 .col-xs-4 {
